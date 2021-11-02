@@ -24,15 +24,18 @@ const MainContent = () => {
   return (
     // h-[30rem]
     <div className="p-4 border-2 h-96  overflow-y-scroll">
-      {allNews.map(({ title, url, urlToImage, description }, i) => (
-        <News
-          key={i}
-          title={title}
-          url={url}
-          image={urlToImage}
-          desc={description}
-        />
-      ))}
+      {allNews.map(
+        ({ title, url, urlToImage, description, publishedAt }, i) => (
+          <News
+            key={i}
+            title={title}
+            url={url}
+            image={urlToImage}
+            desc={description}
+            date={publishedAt}
+          />
+        )
+      )}
     </div>
   );
 };

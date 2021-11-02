@@ -1,6 +1,6 @@
 import React from "react";
 
-export const News = ({ title, image, url, desc }) => {
+export const News = ({ title, image, url, desc, date }) => {
   return (
     <div className="my-4 bg-gray-200 rounded-md p-4">
       <img
@@ -8,6 +8,9 @@ export const News = ({ title, image, url, desc }) => {
         src={image}
         alt=""
       />
+      <p className="text-gray-500 text-sm">
+        Published at: {date.substring(0, 10)}
+      </p>
       <h1 className="text-2xl font-semibold mt-4">{title}</h1>
       <p className="mt-1 text-gray-500">{desc}</p>
       <a

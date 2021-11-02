@@ -9,9 +9,12 @@ export const newsSlice = createSlice({
     setNews: (state, { payload }) => {
       state.allNews = payload;
     },
+    setSearchNews: (state, { payload }) => {
+      state.allNews = payload;
+    },
   },
 });
 
-export const { setNews } = newsSlice.actions;
+export const { setNews, setSearchNews } = newsSlice.actions;
 
 export default newsSlice.reducer;
