@@ -22,8 +22,7 @@ const MainContent = () => {
   const { allNews } = useSelector((state) => state.news);
 
   return (
-    // h-[30rem]
-    <div className="p-4 border-2 h-96  overflow-y-scroll">
+    <div className="p-4 border-2 height  overflow-y-scroll">
       {allNews.map(
         ({ title, url, urlToImage, description, publishedAt }, i) => (
           <News

@@ -17,7 +17,7 @@ export const Search = () => {
 
   const handleSearch = (searchBox, language) => {
     if (!searchBox) {
-      return alert("Please enter in search feild!");
+      return alert("Please enter any charecter in search feild!");
     }
     newsApiCall(searchBox, language);
   };
