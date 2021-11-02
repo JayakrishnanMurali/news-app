@@ -1,7 +1,32 @@
 import React from "react";
 
 const RightContent = () => {
-  return <div className="bg-green-200 h-96 overflow-hidden">Right</div>;
+  return (
+    <div className="p-4 h-96 overflow-hidden border-t-2 border-b-2">
+      <div className="border-2 border-black text-center rounded-md p-4 mb-8">
+        <p className="">Download the official app</p>
+        <div className="flex flex-col ">
+          <button className="bg-black text-white px-4 py-1 mt-4 rounded-md">
+            Download
+          </button>
+        </div>
+      </div>
+
+      <div className="bg-green-300 text-center rounded-md p-4">
+        <p className="">Subscribe to the news letter</p>
+        <div className="flex flex-col mt-4">
+          <input
+            className="px-4 py-1 outline-none rounded-md"
+            type="text"
+            placeholder="Email"
+          />
+          <button className="bg-black text-white px-4 py-1 mt-4 rounded-md">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default RightContent;
