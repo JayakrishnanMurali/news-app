@@ -4,7 +4,7 @@ export const News = () => {
   return (
     <div className="my-4 bg-gray-200 rounded-md p-4">
       <img
-        className="object-cover h- h-48 w-full rounded-md"
+        className="object-cover h-32 sm:h-48 w-full rounded-md"
         src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202104/Ground_Report-Kerala_Covid_1200x768.jpeg?cJNsARVUvYwt7zEY6PCdLTe52EB3DA_5&size=770:433"
         alt=""
       />

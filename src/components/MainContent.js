@@ -3,7 +3,10 @@ import { News } from "./News";
 
 const MainContent = () => {
   return (
-    <div className="p-4 border-2 h-[30rem] overflow-y-scroll">
+    // h-[30rem]
+    <div className="p-4 border-2 h-96  overflow-y-scroll">
+      <News />
+      <News />
       <News />
       <News />
     </div>

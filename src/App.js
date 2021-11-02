@@ -11,14 +11,14 @@ function App() {
     <div className="px-8 py-4 h-screen overflow-hidden">
       <Header />
       <Search />
-      <div className="grid grid-cols-5 mt-8 gap-4">
-        <div className="">
+      <div className="lg:grid grid-cols-5 mt-8 gap-4">
+        <div className="hidden lg:block">
           <LeftContent />
         </div>
         <div className="col-span-3">
           <MainContent />
         </div>
-        <div>
+        <div className="hidden lg:block">
           <RightContent />
         </div>
       </div>

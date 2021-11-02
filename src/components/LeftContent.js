@@ -7,7 +7,7 @@ const LeftContent = () => {
       <div className="flex items-end">
         <h1 className="text-xl font-semibold ">Captian To Retire</h1>
         <img
-          className="object-cover w-32 h-36"
+          className="object-cover w-32 h-20 rounded-md"
           src="https://c.ndtvimg.com/2021-11/p02dkegg_virat-kohli-afp_625x300_01_November_21.jpg"
           alt=""
         />
