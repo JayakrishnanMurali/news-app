@@ -25,8 +25,8 @@ today = curMonth + " " + currDay + ", " + currYear;
 const Header = () => {
   console.log(today);
   return (
-    <div className="fixed  h-36 border-b-2 z-40 w-full top-0 left-0 bg-white">
-      <div className="mx-8 py-9  flex items-center justify-between">
+    <div className="fixed  h-36  z-40 w-full top-0 left-0 bg-white">
+      <div className="mx-8 py-9 border-b-2 flex items-center justify-between">
         <h1 className=" font-medium text-2xl">JK.</h1>
         <div className="flex flex-col items-center py-">
           <h1 className="text-4xl font-bold border-2 border-black p-2">

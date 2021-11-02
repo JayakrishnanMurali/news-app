@@ -1,4 +1,5 @@
 import React from "react";
+import { Footer } from "./components/Footer";
 import Header from "./components/Header";
 import LeftContent from "./components/LeftContent";
 import MainContent from "./components/MainContent";
@@ -7,7 +8,7 @@ import { Search } from "./components/Search";
 
 function App() {
   return (
-    <div className="px-8 py-4">
+    <div className="px-8 py-4 h-screen overflow-hidden">
       <Header />
       <Search />
       <div className="grid grid-cols-5 mt-8 gap-4">
@@ -21,6 +22,7 @@ function App() {
           <RightContent />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
