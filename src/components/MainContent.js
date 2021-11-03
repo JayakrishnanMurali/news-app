@@ -16,7 +16,7 @@ const MainContent = () => {
   };
 
   useEffect(() => {
-    newsApiCall();
+    // newsApiCall();
   }, []);
 
   const { allNews } = useSelector((state) => state.news);

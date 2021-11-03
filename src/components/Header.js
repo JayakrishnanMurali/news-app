@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const monthNames = [
   "January",
@@ -23,6 +24,38 @@ const currYear = today.getFullYear();
 today = curMonth + " " + currDay + ", " + currYear;
 
 const Header = () => {
+  const [lat, setLatitude] = useState("");
+  const [long, setLongitude] = useState("");
+  const [weathers, setWeather] = useState();
+
+  const getPosition = () => {
+    return new Promise(function (resolve, reject) {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  };
+
+  const storeGeoLocation = async () => {
+    const {
+      coords: { latitude, longitude },
+    } = await getPosition();
+    setLatitude(latitude);
+    setLongitude(longitude);
+  };
+
+  const getWeather = async (latitude, longitude) => {
+    const { data } = await axios.get(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ef4b40e18e94451407a2ab18da6336fb&units=metric`
+    );
+    setWeather(data);
+  };
+
+  useEffect(() => {
+    storeGeoLocation();
+    if (lat && long) {
+      getWeather(lat, long);
+    }
+  }, [lat, long]);
+
   return (
     <div className="fixed  sm:h-36  z-40 w-full top-0 left-0 bg-white">
       <div className="mx-8 py-2 sm:py-9 border-b-2 flex items-center justify-between">
@@ -36,17 +69,23 @@ const Header = () => {
           </p>
         </div>
         <div>
-          <p className="text-sm sm:text-lg font-medium">Weather</p>
-          <div>
-            <p className="text-xs sm:text-base text-gray-500">Clear Sky</p>
-            {/* Add cloud */}
-          </div>
-          <div>
-            <p className="hidden sm:block text-xs sm:text-base text-gray-500">
-              temp: 282.55
-            </p>
-            {/* Add temp */}
-          </div>
+          {weathers && (
+            <div>
+              <p className="text-sm sm:text-lg font-medium">Weather</p>
+              <div>
+                <p className="text-xs sm:text-base text-gray-500">
+                  {weathers.weather[0].description}
+                </p>
+                {/* Add cloud */}
+              </div>
+              <div>
+                <p className="hidden sm:block text-xs sm:text-base text-gray-500">
+                  Temp: {weathers.main.temp}
+                </p>
+                <p className="text-gray-500">Location: {weathers.name}</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
