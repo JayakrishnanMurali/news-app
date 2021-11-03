@@ -28,6 +28,8 @@ const Header = () => {
   const [long, setLongitude] = useState("");
   const [weathers, setWeather] = useState();
 
+  const WEATHER_API = process.env.REACT_APP_WEATHER_API;
+
   const getPosition = () => {
     return new Promise(function (resolve, reject) {
       navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -44,7 +46,7 @@ const Header = () => {
 
   const getWeather = async (latitude, longitude) => {
     const { data } = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=ef4b40e18e94451407a2ab18da6336fb&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${WEATHER_API}&units=metric`
     );
     setWeather(data);
   };
@@ -76,13 +78,14 @@ const Header = () => {
                 <p className="text-xs sm:text-base text-gray-500">
                   {weathers.weather[0].description}
                 </p>
-                {/* Add cloud */}
               </div>
               <div>
                 <p className="hidden sm:block text-xs sm:text-base text-gray-500">
                   Temp: {weathers.main.temp}
                 </p>
-                <p className="text-gray-500">Location: {weathers.name}</p>
+                <p className="text-xs sm:text-base text-gray-500">
+                  Location: {weathers.name}
+                </p>
               </div>
             </div>
           )}

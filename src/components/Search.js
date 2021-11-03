@@ -7,10 +7,11 @@ export const Search = () => {
   const [searchBox, seetSearchBox] = useState("");
   const [language, setLanguage] = useState("en");
   const dispatch = useDispatch();
+  const NEWS_API = process.env.REACT_APP_NEWS_API;
 
   const newsApiCall = async (searchBox, language) => {
     const { data } = await axios.get(
-      `https://newsapi.org/v2/everything?q=${searchBox}&language=${language}&apiKey=c589a52ef4bb4f3fb1d31a7e031f3f90&sortBy=publishedAt`
+      `https://newsapi.org/v2/everything?q=${searchBox}&language=${language}&apiKey=${NEWS_API}&sortBy=publishedAt`
     );
     dispatch(setSearchNews(data.articles));
   };

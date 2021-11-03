@@ -7,16 +7,18 @@ import { News } from "./News";
 
 const MainContent = () => {
   const dispatch = useDispatch();
+  const NEWS_API = process.env.REACT_APP_NEWS_API;
 
+  console.log("NEW", NEWS_API);
   const newsApiCall = async () => {
     const { data } = await axios.get(
-      "https://newsapi.org/v2/top-headlines?country=in&apiKey=c589a52ef4bb4f3fb1d31a7e031f3f90"
+      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${NEWS_API}`
     );
     dispatch(setNews(data.articles));
   };
 
   useEffect(() => {
-    // newsApiCall();
+    newsApiCall();
   }, []);
 
   const { allNews } = useSelector((state) => state.news);
