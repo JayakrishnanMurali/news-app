@@ -11,7 +11,7 @@ const MainContent = () => {
 
   const newsApiCall = async () => {
     const { data } = await axios.get(
-      `https://newsapi.org/v2/top-headlines?country=in&apiKey=${NEWS_API}`
+      `//newsapi.org/v2/top-headlines?country=in&apiKey=${NEWS_API}`
     );
     dispatch(setNews(data.articles));
   };
