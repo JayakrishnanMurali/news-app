@@ -58,6 +58,11 @@ const Header = () => {
     }
   }, [lat, long]);
 
+  // Implemented Geo Location for Weather - used inbuilt methods
+  // for finding the Geo location of the user. Displayed location does
+  // not accurately implement the users location but gives the nearest
+  // location of the user.
+
   return (
     <div className="fixed  sm:h-36  z-40 w-full top-0 left-0 bg-white">
       <div className="mx-8 py-2 sm:py-9 border-b-2 flex items-center justify-between">

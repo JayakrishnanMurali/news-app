@@ -23,6 +23,15 @@ export const Search = () => {
     newsApiCall(searchBox, language);
   };
 
+  // While using the search feature - Please try to search relevent
+  // words.
+
+  // For search results returning no output -  please refrain to search
+  //  for particular charecter for getting to see the implementeed
+  // functionality. Due to the limitation of API response
+  // and Pagination feature some search response can be invalid.
+  // for eg. Results wihtout image.
+
   return (
     <div className="mt-24  sm:mt-40 sm:pt-4 sm:flex justify-center items-center ">
       <div>
