@@ -1,4 +1,6 @@
-** NOTE:** I tried deploying the app to Netlify but I was getting Error Status: 426 ("Upgrade Required") I googled the possible reasons and found these:
+# NOTE:
+
+I tried deploying the app to Netlify but I was getting Error Status: 426 ("Upgrade Required") I googled the possible reasons and found these:
 
 > Yeah, specifically with newsapi.org, seems like since 22 May 2020 they changed the liberties of the free developer keys and now they reject any request using that key that is not coming from localhost. You need to buy one of the keys intended for projects on production
 
